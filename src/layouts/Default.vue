@@ -1,14 +1,17 @@
 <template>
   <div class="layout">
-    <TheHeader />
+    <!-- <TheHeader /> -->
 
+    <!-- Toggle HODL on and Header, Footer & main slot off for maximim site down-ness. -->
 
-    <div class="main">
+    <HODL />
+
+    <!-- <div class="main">
       <slot />
-    </div>
+    </div> -->
 
     
-    <TheFooter />
+    <!-- <TheFooter /> -->
   </div>
 </template>
 
@@ -21,6 +24,7 @@ query {
 </static-query>
 
 <script>
+import HODL from '~/components/HODL.vue'
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
@@ -29,6 +33,7 @@ export default {
     showLogo: { default: true }
   },
   components: {
+    HODL,
     TheHeader,
     TheFooter
   }
