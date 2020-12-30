@@ -1,0 +1,11 @@
+<svg id="elselab-logga" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1278 144">
+<defs><style>.cls-1{fill:#121212;}</style></defs>
+<title>else-logga</title>
+<polygon class="cls-1" points="0 0 0 144 144 144 144 122 23 122 23 80 144 80 144 57 23 57 23 23 144 23 144 0 0 0"/>
+<polygon class="cls-1" points="567 0 567 144 711 144 711 122 590 122 590 80 711 80 711 57 590 57 590 23 711 23 711 0 567 0"/>
+<polygon class="cls-1" points="212 0 189 0 189 144 333 144 333 122 212 122 212 0"/>
+<polygon class="cls-1" points="401 44 401 23 522 23 522 0 378 0 378 59 500 109 500 122 378 122 378 144 522 144 522 93 401 44"/>
+<path class="cls-1" d="M945,0V144h23V86h99v59h23V0H945Zm122,63H968V23h99Z"/>
+<polygon class="cls-1" points="779 0 756 0 756 144 900 144 900 122 779 122 779 0"/>
+<path class="cls-1" d="M1134,0V144h144V104l-12-31,12-31V0Zm23,122V81h89l10,27v14Zm99-85-9,22h-90V23h99Z"/>
+</svg>

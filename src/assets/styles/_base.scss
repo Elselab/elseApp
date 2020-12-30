@@ -1,0 +1,86 @@
+// Default
+
+body {
+ 	background-color: var(--clr-bg);
+ 	color: var(--body-color);
+ 	// transition: color .6s, background-color .6s;
+ 	font-family: "OfficialSans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin:0;
+  padding:0;
+  // line-height: 1.5;
+}
+::selection {
+  color: var(--selection-fill);
+  background: var(--selection-color);
+}
+
+// Nice and smooooth
+body, p, h1, h2, h3, h4, h5 {
+  transition: all 0.4s ease;
+}
+h1 {
+	font-family: 'OfficialSans-Black';
+}
+
+
+a:not(.button) {
+	color: var(--link-color);
+ 	transition: opacity .2s;
+	&:hover {
+		opacity: .8;
+	}
+}
+
+body {
+  background-color: var(--clr-bg);
+}
+
+.section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+
+::selection {
+  background-color: var(--clr-accent);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  &:hover {
+    color: red;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+
+.card {
+  border: 1px solid var(--clr-border);
+  // background-color: var(--bg-color);
+  border-radius: 2px;
+  // padding: 24px;
+  &--full {
+    padding: 0;
+  }
+}
+
+.btn {
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 10px;
+  padding: 5px 30px;
+  background-color: var(--clr-bg);
+  // color: neutrals(5);
+  text-decoration: none;
+  border: 2px solid var(--clr-border);
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  word-break: keep-all;
+  &:hover {
+    color: var(--clr-bg);
+    background-color: var(--clr-body); 
+  }
+}

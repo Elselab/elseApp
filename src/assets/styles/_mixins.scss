@@ -1,0 +1,14 @@
+$breakpoints: (
+  xs: 0px, 
+  sm: 575px, 
+  med: 768px, 
+  lg: 992px, 
+  xl: 1400px
+ );
+
+@mixin mq($size) {
+  $value: map-get($breakpoints, $size);
+  @media only screen and (min-width: $value) {
+    @content;
+  }
+}

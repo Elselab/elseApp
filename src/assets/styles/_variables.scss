@@ -1,0 +1,83 @@
+// Default variables
+:root {
+
+  // Multipliers go here
+  --fs-multiplier: 1;
+  // Using mostly major third typescale 1.250
+  --fs-1: calc(1rem * var(--fs-multiplier));
+  --fs-2: calc(1.125rem * var(--fs-multiplier));
+  --fs-3: calc(1.25rem * var(--fs-multiplier));
+  --fs-4: calc(1.75rem * var(--fs-multiplier));
+  --fs-5: calc(2.2rem * var(--fs-multiplier));
+  --fs-XS: calc(0.75rem * var(--fs-multiplier));
+  --fs-SM: calc(0.875rem * var(--fs-multiplier));
+  --fs-MED: calc(0.9rem * var(--fs-multiplier));
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --fs-multiplier: 1;
+  }
+}
+@media screen and (min-width: 992px) {
+  :root {
+    --fs-multiplier: 1.2;
+  }
+}
+
+html { font-size: var(--fs-1); }
+p { font-size: var(--fs-1); }
+h4 { font-size: var(--fs-2); }
+h3 { font-size: var(--fs-3); }
+h2 { font-size: var(--fs-4); }
+h1 { font-size: var(--fs-5); }
+
+// Light default theme
+body {
+	--clr-bg: #F3F7F9;
+  --clr-bg-content: #fff;
+  --clr-primary: #2700FF;
+	// --bg-intro-color: var(--bg-content-color);
+ 	--clr-bg-code: #fffbf3;
+ 	--clr-body: #222;
+ 	--clr-title: #111;
+	--clr-link: #333;
+  --clr-accent: #d2c378;
+  --clr-border:  rgba(0,0,0,.1);
+
+	--selection-color: rgba(55,55,55,1);
+  --selection-fill: rgba(1,1,1,1);
+  
+	--space: 3.5rem;
+  --content-width: 992px;
+	--header-height: 120px;
+	--footer-height: 420px;
+  --radius: 4px;
+}
+
+// Make  things smaller for mobile
+@media screen and (min-width: 768px) {
+	html {
+		--base-font-size: 17px;
+	}
+	body {
+		--space: 1.5rem;
+		--header-height: 120px;
+	}
+}
+
+
+// Override variables for Dark theme
+body[data-theme="dark"] {
+	 // --bg-color: #0D2538;
+	--bg-color: #0c0e0f;
+	 // --bg-content-color: #0f2d44;
+	--bg-content-color: rgba(255,255,255,.05);
+	--bg-intro-color: var(--bg-color);
+ 	--bg-code: rgba(0,0,0,.3);
+ 	--border-color:  rgba(255,255,255,.1);
+ 	--body-color: #ced8de;
+ 	--title-color: #8fd2ff;
+	--link-color: #a1a1a1;
+	--accent-color: #8fd2ff;
+}
