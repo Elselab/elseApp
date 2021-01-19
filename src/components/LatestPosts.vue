@@ -10,7 +10,7 @@
 
 <static-query>
   query {
-    allPost (perPage: 2, filter: {published: {eq: true}}) {
+    allPost (perPage: 3, filter: {published: {eq: true}}) {
       edges {
         node {
           id

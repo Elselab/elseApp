@@ -1,18 +1,24 @@
 <template>
-  <div class="layout">
-    <!-- <TheHeader /> -->
+  
+    <div class="layout">
+      
+      <!-- <TheHeader /> -->
+      <transition name="fade" appear>
 
-    <!-- Toggle HODL on and Header, Footer & main slot off for maximim site down-ness. -->
+      <!-- Comment out Header, Footer & main slot off for maximim site down-ness. -->
+      <!-- Comment in HODL. -->
 
-    <HODL />
+      <HODL />
 
-    <!-- <div class="main">
-      <slot />
-    </div> -->
+      <!-- <div class="main">
+        <slot />
+      </div> -->
 
-    
-    <!-- <TheFooter /> -->
-  </div>
+      </transition>
+      <!-- <TheFooter /> -->
+      
+    </div>
+  
 </template>
 
 <static-query>
@@ -63,11 +69,11 @@ body {
   padding:0;
   line-height: 1.5;
 }
-/* h1 {
-  font-family: 'OfficialSansBlack';
-} */
+
 .active--exact.active {
-  color: var(--accent-color);
+  // color: var(--clr-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 12%;
 }
 
 .layout {
@@ -86,10 +92,33 @@ body {
   }
 }
 
+/* header-height + footer height */
 .main {
   min-height: calc(100vh - 540px); 
-  /* header-height + footer height */
+  // background-color: pink;
 }
 
+
+// Page transition for the default layout
+.fade-enter-active {
+  transition: opacity 1700ms ease;
+    // animation-delay: 750ms;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+
+// .fade-enter-active {
+//  transition: all 1500ms ease;
+//  animation-delay: 3s;
+// }
+
+// .fade-enter {
+//   opacity: 0;
+//   transform: translateY(-2em);
+//   animation-delay: 2s;
+// }
 
 </style>

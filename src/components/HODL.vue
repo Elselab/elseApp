@@ -39,7 +39,7 @@ export default {
 .HODL {
   display: grid;
   width: 100%;
-  background-color: black;
+  background-color: var(--clr-darkest);
   height: 100vh;
   place-items: center;
   &-orb {
@@ -48,19 +48,20 @@ export default {
   }
   .st0, .st1 {
     fill: none;
-    stroke: black;
+    stroke: var(--clr-darkest);
     stroke-miterlimit:10;
   }
   p {
     max-width: 520px;
-    color: white;
+    color: var(--clr-white);
     text-align: center;
     // font-size: var(--fs-1);
     // place-items: end;
-    widows: 2;
+    // orphans: 3;
+    // widows: 3;
   }
   a {
-    text-decoration: underline;
+    // text-decoration: underline;
   }
     @media only screen and (min-width: 768px) {
     .HODL-orb {

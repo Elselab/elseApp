@@ -3,6 +3,15 @@
     <div class="post-card__header">
       <g-image alt="Cover image" v-if="post.cover_image" class="post-card__image" :src="post.cover_image" />
     </div>
+    <div class="post-card__content">
+      <h2 class="post-card__title" v-html="post.title" />
+      <p class="post-card__description" v-html="post.description" />
+
+      <PostMeta class="post-card__meta" :post="post" />
+      <PostTags class="post-card__tags" :post="post" />
+
+      <g-link class="post-card__link" :to="post.path">Link</g-link>
+    </div>
   </div>
 </template>
 
@@ -22,8 +31,9 @@ export default {
 <style lang="scss">
 .post-card {
   // margin-bottom: var(--space) !important; //override in posts page. fix this
-  // margin-bottom: var(--space);
+  margin-top: var(--space);
   position: relative;
+  transition: all 250ms ease;
 
   &__header {
     margin-left: calc(var(--space) * -1);
@@ -50,6 +60,7 @@ export default {
 
   &:hover {
     transform: translateY(-5px);
+    transition: all 350ms ease;
     // box-shadow: 1px 10px 30px 0 rgba(0,0,0,.1);
   }
 

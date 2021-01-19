@@ -1,5 +1,5 @@
 <template>
-  <div v-on:mouseover="mouseOver">
+  <div>
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
     <circle class="ORB" id="ORB" cx="60" cy="60" r="60"></circle>
     <path id="COSINE" class="st0" d="M296,12c-20,0-28,22-37,48s-17,48-37,48-28-22-37-48-17-48-37-48-28,22-37,48-17,48-37,48S46,86,37,60,20,12,0,12" transform="translate(15.03)"/>
@@ -25,7 +25,7 @@
 }
 
 .ORB:hover {
-  // fill: var(--clr-accent);
+  // fill: var(--clr-primary);
   animation: orb-clr-shifter 75ms infinite ease-out;
   // animation: else-red-clr-shifter 3s infinite;
   // opacity: 0.8;
@@ -39,7 +39,7 @@
 
 .st0, .st1 {
   fill: none;
-  stroke: black;
+  stroke: var(--clr-darkest);
   stroke-miterlimit:10;
 }
 .st0 {
@@ -50,9 +50,9 @@
   stroke-width:2.17;
   animation: waveForm 3s linear infinite;
 }
-.mouseOver {
-  animation: waveForm 10s linear infinite;
-}
+// .mouseOver {
+//   animation: waveForm 10s linear infinite;
+// }
 
 @keyframes orb-clr-shifter {
   0% {

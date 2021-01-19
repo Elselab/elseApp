@@ -1,16 +1,16 @@
 ---
-title: works third
-date: 2021-01-03
+title: works sixth
+date: 2021-01-06
 published: true
 archived: false
 author:
-categories: ['shader', 'experiement']
+categories: ['sixo', 'experiement']
 canonical_url:
 series:
 cover_image: ./images/12883453214_3f7cdcae5a_5k.jpg
 description: Some very exciting third post
 ---
 
-# Work3
+# Work6
 
-work three for thee work three for thee work three for thee.
+6 and 6 and another 6.

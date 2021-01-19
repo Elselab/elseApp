@@ -1,10 +1,9 @@
 <template>
-  <section class="goods">
-    
-    <article class="itemCard itemCard--desaturated"  v-for="edge in $static.allDerGood.edges" :key="edge.node.id">
+<section class="goods">
+<article class="itemCard itemCard--desaturated"  v-for="edge in $static.allDerGood.edges" :key="edge.node.id">
     <!-- <div v-html="edge.node.content" /> -->
       <!-- {{ edge.node.published }} -->
-      <g-link class="itemCard--coverLink" :to="`/${ edge.node.creatorslug }/${ edge.node.slug }`">
+      <g-link class="itemCard--coverLink" :to="`/${ edge.node.creatorslug }/${ edge.node.path }`">
         <div class="slide itemCard--coverImg">
           <!-- <g-image class="slide--image imageLoader--image imageLoader--loaded" src="~/goods/images/Afrikola.png" :alt="name" /> -->
           <!-- <g-image class="slide--image imageLoader--image imageLoader--loaded" src="~/goods/images/large-tiles.png" :alt="name" /> -->
@@ -42,25 +41,30 @@
         </div>  
       </div>
     </article>
-
-
-
-    <!-- <h3>All Goods, Cool</h3>
-    <article v-for="edge in $static.allDerGood.edges" :key="edge.node.id">
-      <div v-html="edge.node.content" />
-
-      <h4>{{ edge.node.title }}</h4>
-      <p>{{ edge.node.date }}</p>
-      <g-link :to="`//${ edge.node.slug }`">Read More</g-link>
-    </article> -->
   </section>
-  
 </template>
 
+
 <static-query>
-
-
+  query {
+    allDerGood {
+      edges {
+        node {
+          title
+          published
+          creator
+          creatorslug
+          avatar (width: 44, quality: 100)
+          image (width: 900, quality: 100)
+          version
+          price
+          path
+        }
+      }
+    }
+  }
 </static-query>
+
 
 
 <script>
@@ -71,11 +75,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .goods {
   padding: 20vh 0;
-  // background-color: gray(2);
-  background-color: red;
+  // background-color: red;
   margin: 0 auto;
 
   // FIX MIXINS GRID LAYOUT!!!!!!!!!
@@ -92,7 +95,7 @@ export default {
 
 .itemCard {
   // border: 1px solid gray(4);
-  border: 1px solid red;
+  border: 1px solid var(--clr-darkest);
   border-radius: 4px;
   // background-color: bisque;
   margin: 0 .5rem 2rem;
@@ -105,7 +108,7 @@ export default {
   &--info {
     position: relative;
     display: flex;
-    border-top: 1px solid pink;
+    // border-top: 1px solid pink;
     padding: 0.6rem;
   }
   &--infoLeft {

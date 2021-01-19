@@ -1,6 +1,6 @@
 <template>
   <posts-layout>
-    <section class="moat">
+    <section class="moat entries">
       
       <h3>Entries</h3>
       <!-- <LatestPosts /> -->
@@ -8,14 +8,11 @@
       <!-- <h4 v-html="$page.post.content" ></h4> -->
       <!-- <div v-for="edge in $page.post.edges" :key="edge.node.title" :post="edge.node"/> -->
 
-      <!-- <div class="posts">
-        <PostCard v-for="edge in $page.post.edges" :key="edge.node.id" :post="edge.node"/>
-      </div> -->
-      <h4 v-for="edge in $page.posts.edges" :key="edge.node.id">
-        {{ edge.node.title }}
-        {{ edge.node.date }}
-      </h4>
-
+      <div class="grid">
+      <PostCard v-for="edge in $page.posts.edges" :key="edge.node.id" :post="edge.node" class="card card__posts"/>
+          <!-- {{ edge.node.title }}
+          {{ edge.node.date }} -->
+      </div>
       <!-- Paginate -->
       <div class="pagination">
       <Pager :info="$page.posts.pageInfo" linkClass="pager" />
@@ -29,7 +26,7 @@
 
 <page-query>
 query ($page: Int) {
-  posts: allPost(perPage: 2, page: $page, filter: { published: { eq: true }}) @paginate {
+  posts: allPost(perPage: 3 , page: $page, filter: { published: { eq: true }}) @paginate {
     pageInfo {
       totalPages
       currentPage
@@ -39,8 +36,10 @@ query ($page: Int) {
         ... on Post {
           id
           title
-          date (format: "D. MMMM YYYY")
-          timeToRead
+          date (format: "MMMM D, YYYY")
+          # timeToRead
+          description
+          # cover_image (width: 1800, height: 900, blur: 10) 
           path 
           tags {
             id
@@ -58,18 +57,22 @@ query ($page: Int) {
 
 <script>
 import { Pager } from 'gridsome';
-import LatestPosts from '../../components/LatestPosts.vue';
+// import LatestPosts from '../../components/LatestPosts.vue';
 import PostCard from '../../components/PostCard.vue';
 import PostsLayout from '../../layouts/PostsLayout.vue';
 
 export default {
   components: {
     PostsLayout,
-    LatestPosts,
+    // LatestPosts,
     PostCard,
     Pager
+  },
+  metaInfo: {
+    // title: 'Hello, world!'
+    title: 'Posts'
   }
-};
+}
 </script>
 
 
@@ -79,22 +82,49 @@ export default {
 
 
 <style lang="scss">
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-  width: 100%;
-  // background-color: pink;
-}
+.entries {
+  .grid {
+    margin: 0 auto;
+    max-width: var(--content-width-plus);
+    --grid-cols: 1;
+    grid-gap: 0rem;
+  }
+  
+  .card {
+    &__posts {
+      background-color: pink;
+    }
+  }
 
-.pager {
-  background-color: var(--bg-color);
-  font-size: var(--fs-3);
-  // border: 1px solid var(--border-color);
-  color: currentColor;
-  text-decoration: none;
-  padding: .25em .75em;
-  border-radius: var(--radius);
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    width: 100%;
+    // background-color: pink;
+  }
+
+  .pager {
+    background-color: var(--clr-bg);
+    font-size: var(--fs-3);
+    // border: 1px solid var(--border-color);
+    color: currentColor;
+    text-decoration: none;
+    padding: .25em .75em;
+    border-radius: var(--radius);
+  }
+
+  @media screen and (min-width: 768px) {
+    .grid {
+      --grid-cols: 2;
+      grid-gap: 1.8rem;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .grid {
+      --grid-cols: 3;
+    }
+  }
 }
 </style>
 

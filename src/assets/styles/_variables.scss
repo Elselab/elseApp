@@ -2,21 +2,38 @@
 :root {
 
   // Multipliers go here
-  --fs-multiplier: 1;
+  --fs-multiplier: 1.05;
   // Using mostly major third typescale 1.250
   --fs-1: calc(1rem * var(--fs-multiplier));
   --fs-2: calc(1.125rem * var(--fs-multiplier));
   --fs-3: calc(1.25rem * var(--fs-multiplier));
   --fs-4: calc(1.75rem * var(--fs-multiplier));
-  --fs-5: calc(2.2rem * var(--fs-multiplier));
+	--fs-5: calc(2.2rem * var(--fs-multiplier));
+	--fs-XXS: calc(0.6rem * var(--fs-multiplier));
   --fs-XS: calc(0.75rem * var(--fs-multiplier));
   --fs-SM: calc(0.875rem * var(--fs-multiplier));
-  --fs-MED: calc(0.9rem * var(--fs-multiplier));
+	--fs-MED: calc(0.9rem * var(--fs-multiplier));
+
+	// Elevation
+	--level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	--level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	--level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	--level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+	// Breakpoints
+	--breakpoint-xs: 0px;
+  --breakpoint-sm: 575px;
+  --breakpoint-med: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1400px;
+
+
+
 }
 
 @media screen and (min-width: 768px) {
   :root {
-    --fs-multiplier: 1;
+    --fs-multiplier: 1.15;
   }
 }
 @media screen and (min-width: 992px) {
@@ -32,27 +49,56 @@ h3 { font-size: var(--fs-3); }
 h2 { font-size: var(--fs-4); }
 h1 { font-size: var(--fs-5); }
 
+
+
 // Light default theme
 body {
-	--clr-bg: #F3F7F9;
-	--clr-bg-content: #fff;
-  --clr-primary: #d2c378;
-	// --bg-intro-color: var(--bg-content-color);
- 	--clr-bg-code: #fffbf3;
- 	--clr-body: #222;
- 	--clr-title: #111;
-	--clr-link: #333;
-  --clr-accent: #d2c378;
-  --clr-border:  rgba(0,0,0,.1);
+	// Define Colors as colors
+	--clr-gb-green: #C7D07B;
+	--clr-mars: #FF4701;
+	--clr-gold: #D2C378;
+	--clr-glow: #B7FFF3;
+	--clr-slate: #D7DEDB;
+	--clr-sand: #CCD1C3;
+	--clr-yellow: #E9BE00;
+	--clr-blue: #1D00FF;
+	--clr-blue-dark: #001627; 
 
-	--selection-color: rgba(55,55,55,1);
-  --selection-fill: rgba(1,1,1,1);
-  
+	--clr-red: #FF3B47;
+	--clr-dark: #121212;
+	--clr-darkest: #000310;
+	--clr-white: #FFF;
+
+	
+
+
+	// Color intentions
+	--clr-bg: #F3F7F9;
+	--clr-bg-content: var(--clr-white);
+	--clr-primary: var(--clr-mars);
+	--clr-danger: var(--clr-red);
+	--clr-bg-code: #fffbf3;
+	--clr-card-bg: var(--clr-white);
+ 	--clr-body: #222;
+ 	--clr-title: var(--clr-dark);
+	--clr-link: var(--clr-blue);
+	--clr-border:  rgba(0,0,0,.1);
+
+	
+	// Styles
+	--line: 1px solid rgba(0, 0, 0, .2);
+	--cancel: var(--clr-red);
+	--selection-color: var(--clr-primary);
+  --selection-fill: #000;
+	
+	// Layout  Utility
 	--space: 3.5rem;
-  --content-width: 992px;
+	--content-width: 992px;
+	--content-width-plus: 1400px;
 	--header-height: 120px;
 	--footer-height: 420px;
-  --radius: 4px;
+	--radius: 4px;
+	--radius-btn: 8px;
 }
 
 // Make  things smaller for mobile
@@ -79,5 +125,5 @@ body[data-theme="dark"] {
  	--body-color: #ced8de;
  	--title-color: #8fd2ff;
 	--link-color: #a1a1a1;
-	--accent-color: #8fd2ff;
+	// --accent-color: #8fd2ff;
 }

@@ -2,13 +2,53 @@
 
 body {
  	background-color: var(--clr-bg);
- 	color: var(--body-color);
+ 	color: var(--clr-body);
  	// transition: color .6s, background-color .6s;
  	font-family: "OfficialSans",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;
   padding:0;
   // line-height: 1.5;
 }
+
+// Header stuff for example only
+// Absolutely don't use this
+
+// header {
+//   background-color: var(--clr-primary);
+//   color: var(--white);
+//   height: var(--header-height);
+//   box-shadow: var(--level-2);
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
+// header nav a {
+//   color: var(--clr-white);
+//   text-decoration: none;
+// }
+
+// footer {
+//   --footer-text-clr: var(--clr-bg);
+//   color: var(--footer-text-clr);
+//   background: var(--clr-darkest);
+//   padding: 3rem 4rem; 
+//   text-align: center;
+// }
+
+// footer a {
+//   color: var(--footer-text-clr);
+// }
+
+// footer p {
+//   margin-bottom: 0;
+//   max-width: none;
+// }
+
+
+
+// End Header stuffs
+
+
 ::selection {
   color: var(--selection-fill);
   background: var(--selection-color);
@@ -22,65 +62,207 @@ h1 {
 	font-family: 'OfficialSans-Black';
 }
 
-
-a:not(.button) {
-	color: var(--link-color);
- 	transition: opacity .2s;
-	&:hover {
-		opacity: .8;
-	}
+p {
+  max-width: 60ch;
 }
 
-body {
-  background-color: var(--clr-bg);
-}
+
+
+
+
+
+// body {
+//   background-color: var(--clr-bg);
+// }
 
 .section {
   padding-top: 4em;
   padding-bottom: 4em;
 }
 
-
-::selection {
-  background-color: var(--clr-accent);
-}
-
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.5s ease;
+  transition: 400ms ease-in-out;
   &:hover {
     color: var(--clr-primary);
-    transition: ease-in-out 0.3s;
+    transition: 300ms ease-in-out;
   }
 }
 
+
+p a {
+  // color: inherit;
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--clr-primary);
+  &:hover {
+    color: var(--clr-primary);
+  }
+}
+
+blockquote {
+  background-color: white;
+  padding: 2rem;
+  line-height: 2rem;
+  a {
+    color: var(--clr-primary);
+  }
+}
+
+// Forms & Inputs
+label {
+  display: block;
+  font-size: var(--fs-XS);
+}
+
+textarea {
+  width: 100%;
+  height: 5rem;
+}
+
+::placeholder {
+  opacity: 0.4;
+}
+
+input, 
+textarea {
+  padding: 6px 8px;
+  border: var(--line);
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background-color: var(--clr-bg-code);
+  border-radius: 4px;
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px var(--clr-primary);
+} 
+input:focus:invalid {
+  outline: 0 0 0 2px var(--clr-danger);
+} 
+
+select {
+  border: var(--line);
+}
+
+hr {
+  border-top: var(--line);
+}
+
+// Button Styling
+button {
+  --clr-button: var(--clr-primary);
+
+  appearance: none;
+  color: var(--clr-body);
+  background-color: var(--clr-button);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 5px 25px;
+  box-shadow: var(--level-1);
+  font-size: var(--fs-XS);
+  cursor: pointer;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+button:hover {
+  box-shadow: var(--level-2);
+  transition: 300ms ease-in-out box-shadow;
+}
+
+button[ disabled ] {
+  opacity: 0.4;
+}
+
+button.cancel {
+  --clr-body: var(--clr-white);
+
+  --clr-button: var(--clr-danger);
+  color: var(--clr-body);
+}
+
+button.small {
+  font-size: var(--fs-XXS);
+}
+
+// Layout styles
+// Moat would go here, but, lives in the default layout
+
+.grid {
+  --grid-cols: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+}
+
+.cols-3 {
+  --grid-cols: 3;
+}
+
+.flex {
+  --justify-content: space-between;
+  display: flex;
+  justify-content: var(--justify-content);
+}
+
+.flex-aroound {
+  --justify-content: space-around;
+}
+
+.fake-logo {
+  font-size: var(--fs-1);
+  margin: 0;
+}
+
+
+
+
+
+a:not(.button) {
+	// color: var(--clr-link);
+ 	transition: all 400ms opacity 200ms;
+	&:hover {
+		opacity: .8;
+	}
+}
 
 .card {
   border: 1px solid var(--clr-border);
-  // background-color: var(--bg-color);
+  background-color: var(--clr-card-bg);
+  margin: 10px;
+  padding: 2em;
   border-radius: 2px;
-  // padding: 24px;
+  box-shadow: var(--level-1);
   &--full {
     padding: 0;
   }
+  // Remove some margins, top, bottom for first and last card elements
+  & > *:first-child {
+    margin-top: 0;
+  } 
+  & > *:last-child {
+    margin-bottom: 0;
+  } 
 }
 
-.btn {
-  display: inline-block;
-  line-height: 50px;
-  margin: 0 10px;
-  padding: 5px 30px;
-  background-color: var(--clr-bg);
-  // color: neutrals(5);
-  text-decoration: none;
-  border: 2px solid var(--clr-border);
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
-  word-break: keep-all;
-  &:hover {
-    color: var(--clr-bg);
-    background-color: var(--clr-body); 
-  }
-}
+// .btn {
+//   display: inline-block;
+//   line-height: 50px;
+//   margin: 0 10px;
+//   padding: 5px 30px;
+//   background-color: var(--clr-bg);
+//   text-decoration: none;
+//   border: 2px solid var(--clr-border);
+//   border-radius: 4px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   word-break: keep-all;
+//   &:hover {
+//     color: var(--clr-bg);
+//     background-color: var(--clr-body); 
+//   }
+// }

@@ -5,8 +5,11 @@ import DefaultLayout from '~/layouts/Default.vue'
 import gsap from 'gsap'
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-// import CustomEase from 'gsap/CustomEase'
+// Import CustomEase from 'gsap/CustomEase'
 
+// Import PrismJS theme
+// import 'prismjs/themes/prism.css'
+// import 'prism-theme-night-owl'
 
 // Import main css
 import '~/assets/styles/index.scss'

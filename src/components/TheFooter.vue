@@ -43,7 +43,7 @@ export default {
 .footer {
   height: var(--footer-height);
   // border: solid 5px #ffcc5c;
-  background-color: #000;
+  background-color: var(--clr-darkest);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +89,7 @@ export default {
 // }
 
 // .ORB:hover{
-//   // fill: var(--clr-accent);
+//   // fill: var(--clr-primary);
 //   animation: orb-clr-shifter 75ms infinite ease-out;
 //   // animation: else-red-clr-shifter 3s infinite;
 //   // opacity: 0.8;

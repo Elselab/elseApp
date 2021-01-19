@@ -10,11 +10,11 @@
     </header>
 </template>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .header {
   width: 100%;
   height: var(--header-height);
-  // background-color: red;
+  // background-color: inherit;
 }
 .nav {
   // background-color: blue;
