@@ -8,6 +8,9 @@ creatorslug: ben-mansell
 tags: ['geometric', 'sans-serif', 'geometric sans']
 image: ./images/Afrikola.png
 price: 10900
+font_type: Variable
+style_nums: 4
+release_status: In Progress
 avatar: ./images/avatars/squacks.png
 ---
 

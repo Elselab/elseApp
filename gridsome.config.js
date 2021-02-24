@@ -37,13 +37,6 @@ module.exports = {
         typeName: 'Post',
         path: 'content/posts/*.md',
         route: '/lab/entries/:title',
-        remark: {
-          plugins: [
-            '@gridsome/remark-prismjs', {
-              showLineNumbers: true,
-            }
-          ]
-        },
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
@@ -91,6 +84,9 @@ module.exports = {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      plugins: [
+        '@gridsome/remark-prismjs'
+      ]
     }
   },
 };

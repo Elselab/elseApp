@@ -22,10 +22,9 @@ query Tag ($id: ID!) {
             id
             title
             path
-            # how the hell are these built-ins not working
-            date (format: "D. MMMM YYYY")
-            # timeToRead
-            # description
+            date (format: "MMMM D, YYYY")
+            timeToRead
+            description
             content
           }
         }

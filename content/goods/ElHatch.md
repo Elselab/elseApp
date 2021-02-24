@@ -5,9 +5,12 @@ published: true
 creator: Ben Mansell
 creatorslug: ben-mansell
 version: 0.1
-tags: ['geometric', 'sans-serif', 'geometric sans']
+tags: ['geometric', 'sans-serif']
 image: ./images/large-tiles.png
 price: 13900
+font_type: Variable
+style_nums: 8
+release_status: Retail
 avatar: ./images/avatars/squacks.png
 ---
 

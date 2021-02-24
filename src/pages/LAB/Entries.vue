@@ -37,7 +37,7 @@ query ($page: Int) {
           id
           title
           date (format: "MMMM D, YYYY")
-          # timeToRead
+          timeToRead
           description
           # cover_image (width: 1800, height: 900, blur: 10) 
           path 
